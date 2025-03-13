@@ -1,0 +1,4 @@
+all:
+  hosts:
+    ubuntu_server:
+      ansible_host: 192.168.5.69
