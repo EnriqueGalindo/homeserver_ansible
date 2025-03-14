@@ -2,6 +2,8 @@
 - name: setup_docker
   hosts: ubuntu_server
   become: yes
+  vars:
+    docker_user: meatloaf
 
   tasks:
     - name: Install requirements
@@ -54,7 +56,7 @@
 
     - name: Add user to Docker group
       user:
-        name: "{{ ansible_user }}"
+        name: "{{ docker_user }}"
         groups: docker
         append: yes
 
