@@ -54,3 +54,9 @@
 
 - name: Pull and run a test container (hello-world)
   command: docker run --rm hello-world
+
+- name: Create shared Docker network
+  docker_network:
+    name: nextcloud_network
+    driver: bridge
+

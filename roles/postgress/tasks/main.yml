@@ -1,0 +1,23 @@
+---
+- name: Ensure PostgreSQL container is running
+  docker_container:
+    name: nextcloud_db
+    image: postgres:15
+    state: started
+    restart_policy: always
+    ports:
+      - "5432:5432"
+    env:
+      POSTGRES_DB: nextcloud
+      POSTGRES_USER: nextcloud
+      POSTGRES_PASSWORD: "{{ vault_postgres_password }}"
+    volumes:
+      - /srv/nextcloud/db:/var/lib/postgresql/data
+  become: yes
+
+- name: Wait for PostgreSQL to be ready
+  wait_for:
+    host: localhost
+    port: 5432
+    delay: 5
+    timeout: 60

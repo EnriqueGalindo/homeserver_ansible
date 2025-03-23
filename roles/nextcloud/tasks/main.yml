@@ -1,0 +1,18 @@
+---
+- name: Create Nextcloud container
+  community.docker.docker_container:
+    name: nextcloud
+    image: nextcloud:latest
+    state: started
+    restart_policy: always
+    ports:
+      - "8080:80"
+    networks:
+      - name: nextcloud_network
+    env:
+      POSTGRES_DB: nextcloud
+      POSTGRES_USER: nextcloud
+      POSTGRES_PASSWORD: "{{ vault_postgres_password }}"
+      POSTGRES_HOST: nextcloud_db
+    volumes:
+      - /srv/nextcloud/html:/var/www/html

@@ -7,3 +7,5 @@
 
   roles:
     - docker
+    - postgress
+    - nextcloud
