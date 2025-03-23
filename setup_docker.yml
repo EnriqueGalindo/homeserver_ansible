@@ -1,0 +1,9 @@
+---
+- name: setup_docker
+  hosts: ubuntu_server
+  become: yes
+  vars:
+    docker_user: meatloaf
+
+  roles:
+    - docker
