@@ -13,6 +13,8 @@
     image: postgres:15
     state: started
     restart_policy: always
+    networks:
+      - name: nextcloud_network
     ports:
       - "5432:5432"
     env:
