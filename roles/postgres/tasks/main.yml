@@ -1,7 +1,7 @@
 ---
 - name: Ensure Postgres data directory exists
   ansible.builtin.file:
-    path: ./srv/nextcloud/db
+    path: /mnt/storage/postgres
     state: directory
     owner: 999   # default UID for postgres in official image
     group: 999
@@ -22,7 +22,7 @@
       POSTGRES_USER: nextcloud
       POSTGRES_PASSWORD: "{{ vault_postgres_password }}"
     volumes:
-      - /srv/nextcloud/db:/var/lib/postgresql/data
+      - /mnt/storage/postgres:/var/lib/postgresql/data
   become: yes
 
 - name: Wait for PostgreSQL to be ready

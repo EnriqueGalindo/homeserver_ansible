@@ -1,7 +1,7 @@
 ---
 - name: Ensure Nextcloud HTML volume directory exists
   ansible.builtin.file:
-    path: ./srv/nextcloud/html
+    path: /srv/nextcloud/html:/var/www/html
     state: directory
     owner: 33     # UID of www-data in the container
     group: 33
