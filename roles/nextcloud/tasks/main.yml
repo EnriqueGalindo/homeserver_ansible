@@ -1,4 +1,12 @@
 ---
+- name: Ensure Nextcloud HTML volume directory exists
+  ansible.builtin.file:
+    path: ./srv/nextcloud/html
+    state: directory
+    owner: 33     # UID of www-data in the container
+    group: 33
+    mode: '0755'
+
 - name: Create Nextcloud container
   community.docker.docker_container:
     name: nextcloud
