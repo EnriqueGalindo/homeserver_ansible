@@ -1,0 +1,207 @@
+/usr/lib/python3/dist-packages/ansible_collections:
+  amazon.aws:
+    version: 7.2.0
+  ansible.netcommon:
+    version: 5.3.0
+  ansible.posix:
+    version: 1.5.4
+  ansible.utils:
+    version: 2.12.0
+  ansible.windows:
+    version: 2.2.0
+  arista.eos:
+    version: 6.2.2
+  awx.awx:
+    version: 23.6.0
+  azure.azcollection:
+    version: 1.19.0
+  check_point.mgmt:
+    version: 5.2.2
+  chocolatey.chocolatey:
+    version: 1.5.1
+  cisco.aci:
+    version: 2.8.0
+  cisco.asa:
+    version: 4.0.3
+  cisco.dnac:
+    version: 6.10.2
+  cisco.intersight:
+    version: 2.0.7
+  cisco.ios:
+    version: 5.3.0
+  cisco.iosxr:
+    version: 6.1.1
+  cisco.ise:
+    version: 2.7.0
+  cisco.meraki:
+    version: 2.17.2
+  cisco.mso:
+    version: 2.5.0
+  cisco.nxos:
+    version: 5.3.0
+  cisco.ucs:
+    version: 1.10.0
+  cloud.common:
+    version: 2.1.4
+  cloudscale_ch.cloud:
+    version: 2.3.1
+  community.aws:
+    version: 7.1.0
+  community.azure:
+    version: 2.0.0
+  community.ciscosmb:
+    version: 1.0.7
+  community.crypto:
+    version: 2.17.1
+  community.digitalocean:
+    version: 1.26.0
+  community.dns:
+    version: 2.8.0
+  community.docker:
+    version: 3.7.0
+  community.general:
+    version: 8.3.0
+  community.grafana:
+    version: 1.7.0
+  community.hashi_vault:
+    version: 6.1.0
+  community.hrobot:
+    version: 1.9.0
+  community.library_inventory_filtering_v1:
+    version: 1.0.0
+  community.libvirt:
+    version: 1.3.0
+  community.mongodb:
+    version: 1.6.3
+  community.mysql:
+    version: 3.8.0
+  community.network:
+    version: 5.0.2
+  community.okd:
+    version: 2.3.0
+  community.postgresql:
+    version: 3.3.0
+  community.proxysql:
+    version: 1.5.1
+  community.rabbitmq:
+    version: 1.2.3
+  community.routeros:
+    version: 2.12.0
+  community.sap:
+    version: 2.0.0
+  community.sap_libs:
+    version: 1.4.2
+  community.sops:
+    version: 1.6.7
+  community.vmware:
+    version: 4.1.0
+  community.windows:
+    version: 2.1.0
+  community.zabbix:
+    version: 2.3.1
+  containers.podman:
+    version: 1.11.0
+  cyberark.conjur:
+    version: 1.2.2
+  cyberark.pas:
+    version: 1.0.25
+  dellemc.enterprise_sonic:
+    version: 2.4.0
+  dellemc.openmanage:
+    version: 8.7.0
+  dellemc.powerflex:
+    version: 2.1.0
+  dellemc.unity:
+    version: 1.7.1
+  f5networks.f5_modules:
+    version: 1.27.1
+  fortinet.fortimanager:
+    version: 2.3.1
+  fortinet.fortios:
+    version: 2.3.4
+  frr.frr:
+    version: 2.0.2
+  gluster.gluster:
+    version: 1.0.2
+  google.cloud:
+    version: 1.3.0
+  grafana.grafana:
+    version: 2.2.4
+  hetzner.hcloud:
+    version: 2.4.1
+  hpe.nimble:
+    version: 1.1.4
+  ibm.qradar:
+    version: 2.1.0
+  ibm.spectrum_virtualize:
+    version: 2.0.0
+  ibm.storage_virtualize:
+    version: 2.2.0
+  infinidat.infinibox:
+    version: 1.3.12
+  infoblox.nios_modules:
+    version: 1.6.1
+  inspur.ispim:
+    version: 2.2.0
+  inspur.sm:
+    version: 2.3.0
+  junipernetworks.junos:
+    version: 5.3.1
+  kubernetes.core:
+    version: 2.4.0
+  lowlydba.sqlserver:
+    version: 2.2.2
+  microsoft.ad:
+    version: 1.4.1
+  netapp.aws:
+    version: 21.7.1
+  netapp.azure:
+    version: 21.10.1
+  netapp.cloudmanager:
+    version: 21.22.1
+  netapp.elementsw:
+    version: 21.7.0
+  netapp.ontap:
+    version: 22.9.0
+  netapp.storagegrid:
+    version: 21.11.1
+  netapp.um_info:
+    version: 21.8.1
+  netapp_eseries.santricity:
+    version: 1.4.0
+  netbox.netbox:
+    version: 3.16.0
+  ngine_io.cloudstack:
+    version: 2.3.0
+  ngine_io.exoscale:
+    version: 1.1.0
+  openstack.cloud:
+    version: 2.2.0
+  openvswitch.openvswitch:
+    version: 2.1.1
+  ovirt.ovirt:
+    version: 3.2.0
+  purestorage.flasharray:
+    version: 1.26.0
+  purestorage.flashblade:
+    version: 1.15.0
+  purestorage.fusion:
+    version: 1.6.0
+  sensu.sensu_go:
+    version: 1.14.0
+  splunk.es:
+    version: 2.1.2
+  t_systems_mms.icinga_director:
+    version: 2.0.1
+  telekom_mms.icinga_director:
+    version: 1.35.0
+  theforeman.foreman:
+    version: 3.15.0
+  vmware.vmware_rest:
+    version: 2.3.1
+  vultr.cloud:
+    version: 1.12.1
+  vyos.vyos:
+    version: 4.1.0
+  wti.remote:
+    version: 1.0.5
