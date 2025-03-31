@@ -1,3 +1,4 @@
 ansible_ssh_pass: "{{ vault_ansible_ssh_pass }}"
 ansible_become_pass: "{{ vault_ansible_become_pass }}"
 ansible_postgres_password: "{{ vault_postgres_password }}"
+ansible_postgres_document_password: "{{ vault_postgres_document_password }}"

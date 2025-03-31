@@ -1,4 +1,11 @@
 ---
+- name: Ensure psycopg2 dependencies are installed
+  ansible.builtin.apt:
+    name:
+      - python3-psycopg2
+    state: present
+    update_cache: yes
+
 - name: Ensure Postgres data directory exists
   ansible.builtin.file:
     path: /mnt/storage/postgres
@@ -20,7 +27,7 @@
     env:
       POSTGRES_DB: nextcloud
       POSTGRES_USER: nextcloud
-      POSTGRES_PASSWORD: "{{ vault_postgres_password }}"
+      POSTGRES_PASSWORD: "{{ ansible_postgres_password }}"
     volumes:
       - /mnt/storage/postgres:/var/lib/postgresql/data
   become: yes
@@ -31,3 +38,47 @@
     port: 5432
     delay: 5
     timeout: 60
+
+
+# Document Database and Tables
+- name: Ensure document user exists
+  community.postgresql.postgresql_user:
+    name: doc_user
+    password: "{{ ansible_postgres_document_password }}"
+    login_user: nextcloud
+    login_password: "{{ ansible_postgres_password }}"
+    login_host: 127.0.0.1
+    login_port: 5432
+
+- name: Ensure document database exists
+  community.postgresql.postgresql_db:
+    name: documents
+    owner: doc_user
+    encoding: UTF8
+    lc_collate: en_US.utf8
+    lc_ctype: en_US.utf8
+    login_user: nextcloud
+    login_password: "{{ ansible_postgres_password }}"
+    login_host: 127.0.0.1
+    login_port: 5432
+    state: present
+
+- name: Ensure doc schema is created
+  community.postgresql.postgresql_query:
+    db: documents
+    query: >
+      CREATE SCHEMA IF NOT EXISTS doc AUTHORIZATION "doc_user";
+    login_user: doc_user
+    login_password: "{{ ansible_postgres_document_password }}"
+    login_host: 127.0.0.1
+    login_port: 5432
+    query: |
+      CREATE TABLE IF NOT EXISTS document (
+        id SERIAL PRIMARY KEY,
+        title TEXT NOT NULL,
+        slug TEXT UNIQUE NOT NULL,
+        file_path TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        is_deleted BOOLEAN NOT NULL DEFAULT FALSE
+      );
